@@ -1,0 +1,153 @@
+.songMenuBtn {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10000;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 10px 22px rgba(20, 10, 25, 0.12);
+
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+
+  transition:
+    transform 140ms ease,
+    background 140ms ease;
+}
+
+.songMenuBtn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.songMenuBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(20, 10, 25, 0.25);
+  backdrop-filter: blur(2px);
+}
+
+.songMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: min(340px, 88vw);
+  z-index: 10000;
+
+  transform: translateX(-110%);
+  transition: transform 220ms ease;
+
+  background: rgba(255, 255, 255, 0.92);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 24px 60px rgba(20, 10, 25, 0.18);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.songMenu.isOpen {
+  transform: translateX(0);
+}
+
+.songMenuHead {
+  padding: 16px 14px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.songMenuTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+.songMenuSub {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.songMenuClose {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 8px;
+  border-radius: 10px;
+}
+.songMenuClose:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.songMenuSearch {
+  padding: 0 14px 12px;
+}
+.songMenuSearch input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+  outline: none;
+}
+
+.songMenuList {
+  padding: 6px 10px 14px;
+  overflow: auto;
+}
+
+.songItem {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 150ms ease;
+  cursor: pointer;
+}
+
+.songItem:hover {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.songItem.isActive {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.songDot {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  font-weight: 900;
+}
+
+.songName {
+  display: block;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.songMeta {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
+}

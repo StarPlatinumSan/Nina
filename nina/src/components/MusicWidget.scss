@@ -1,0 +1,222 @@
+.musicWidget {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items: center;
+
+  padding: 12px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 22px rgba(20, 10, 25, 0.12);
+  backdrop-filter: blur(10px);
+
+  @media (min-width: 768px) {
+    padding: 14px;
+    grid-template-columns: 50px 1fr;
+  }
+}
+
+.musicBtn {
+  height: 46px;
+  width: 46px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 18px rgba(20, 10, 25, 0.1);
+
+  transition:
+    transform 140ms ease,
+    background 140ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.95);
+    outline-offset: 3px;
+  }
+}
+
+.musicBtnIcon {
+  font-size: 18px;
+}
+
+.musicInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.musicTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.musicText {
+  min-width: 0;
+}
+
+.musicTitle {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  color: rgba(42, 36, 48, 0.95);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.musicSubtitle {
+  margin-top: 2px;
+  font-size: 12px;
+  color: rgba(42, 36, 48, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.musicTime {
+  font-size: 12px;
+  color: rgba(42, 36, 48, 0.65);
+  flex: 0 0 auto;
+}
+
+.musicBottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  @media (min-width: 520px) {
+    grid-template-columns: 1fr 160px;
+    align-items: center;
+  }
+}
+
+.seekWrap {
+  position: relative;
+  width: 100%;
+  height: 22px;
+  display: grid;
+  align-items: center;
+}
+
+.seekTrack {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 202, 249, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+}
+
+.seekFill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.seek {
+  width: 100%;
+  appearance: none;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 14px rgba(20, 10, 25, 0.12);
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 14px rgba(20, 10, 25, 0.12);
+    cursor: pointer;
+  }
+}
+
+.volWrap {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 2px;
+  align-items: center;
+}
+
+.volIcon {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.vol {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+
+  background-color: pink;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 14px rgba(20, 10, 25, 0.12);
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 14px rgba(20, 10, 25, 0.12);
+    cursor: pointer;
+  }
+}
+
+.miniPlayer .musicWidget.isCompact {
+  position: absolute;
+  display: flex;
+  width: 40%;
+  left: 105%;
+}
+
+@media screen and (max-width: 1110px) {
+  .miniPlayer .musicWidget.isCompact {
+    width: 70%;
+    left: 80%;
+  }
+}
