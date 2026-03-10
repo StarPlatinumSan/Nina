@@ -1,7 +1,8 @@
 type Photo = { id: string; src: string; alt: string };
 
-export default function PhotoCarousel({ photos, height = 360, secondsPerLoop = 25 }: { photos: Photo[]; height?: number; secondsPerLoop?: number }) {
+export default function PhotoCarousel({ photos, height = 360, secondsPerLoop = 30 }: { photos: Photo[]; height?: number; secondsPerLoop?: number }) {
   const loopPhotos = [...photos, ...photos];
+  const cappedDuration = Math.max(secondsPerLoop, photos.length * 2.5);
 
   return (
     <div
@@ -9,7 +10,7 @@ export default function PhotoCarousel({ photos, height = 360, secondsPerLoop = 2
       style={
         {
           height: `${height}px`,
-          ["--marquee-duration" as any]: `${secondsPerLoop}s`,
+          ["--marquee-duration" as any]: `${cappedDuration}s`,
         } as React.CSSProperties
       }
     >

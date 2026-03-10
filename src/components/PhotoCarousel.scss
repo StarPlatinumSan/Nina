@@ -7,15 +7,15 @@
 .marquee {
   --marquee-h: 200px;
   --marquee-gap: 16px;
-  --marquee-duration: 15500s;
+  --marquee-duration: 30s;
 
   width: 100%;
   height: var(--marquee-h);
   overflow: hidden;
   position: relative;
 
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
 
 .marquee__track {
@@ -24,8 +24,7 @@
   align-items: center;
   gap: var(--marquee-gap);
   width: max-content;
-
-  animation: marquee 100s linear infinite;
+  animation: marquee var(--marquee-duration) linear infinite;
   will-change: transform;
   transform: translateZ(0);
 }

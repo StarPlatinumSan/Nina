@@ -208,15 +208,16 @@
 }
 
 .miniPlayer .musicWidget.isCompact {
-  position: absolute;
+  position: relative;
   display: flex;
   width: 40%;
-  left: 105%;
+  margin: 0 auto;
+  left: auto;
+  right: auto;
 }
 
 @media screen and (max-width: 1110px) {
   .miniPlayer .musicWidget.isCompact {
     width: 70%;
-    left: 80%;
   }
 }
