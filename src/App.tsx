@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, type Variants } from "framer-motion";
 
 import MusicWidget from "./components/MusicWidget";
 import PhotoCarousel from "./components/PhotoCarousel";
@@ -64,48 +64,27 @@ function App() {
 
   const shouldShowMini = giftOpen && (!isHome || showMiniPlayer);
 
-  const allowReveal = giftOpen;
+  const easeStandard: [number, number, number, number] = [0.22, 1, 0.36, 1];
+  const easeLift: [number, number, number, number] = [0.35, 1, 0.5, 1];
 
-  const reveal = {
+  const reveal: Variants = {
     hidden: { opacity: 0, y: 22, scale: 0.985 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
+    show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease: easeStandard } },
   };
 
-  const revealSoft = {
-    hidden: { opacity: 0, y: 14 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-  };
-
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 28 },
     show: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.9,
-        ease: [0.35, 1, 0.5, 1],
+        ease: easeLift,
       },
     },
   };
 
-  const poemReveal = {
-    hidden: { opacity: 0, scale: 0.985 },
-    show: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.45, ease: "easeOut" },
-    },
-  };
-
-  const stagger = {
-    show: {
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  };
-
-  const galleryBtnReveal = {
+  const galleryBtnReveal: Variants = {
     hidden: {
       opacity: 0,
       y: 32,
@@ -120,7 +99,7 @@ function App() {
       transition: {
         duration: 0.9,
         delay: 0.35,
-        ease: [0.22, 1, 0.36, 1],
+        ease: easeStandard,
       },
     },
   };

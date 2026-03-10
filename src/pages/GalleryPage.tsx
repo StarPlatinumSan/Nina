@@ -4,7 +4,7 @@ import FloatingCats from "../components/FloatingCats.tsx";
 
 type Photo = { id: string; src: string; alt: string };
 
-type GroupKey = "Us" | "Her" | "Chaos" | "Random" | "Main" | "Him";
+type GroupKey = "Us" | "Her" | "Chaos" | "Random" | "Him";
 
 const GROUPS: { key: GroupKey; label: string; desc: string }[] = [
   { key: "Us", label: "Nous deux", desc: "Nos moments ensemble 💗" },
@@ -39,9 +39,9 @@ export default function GalleryPage() {
     return {
       Us: toPhotos(usFiles as Record<string, string>),
       Her: toPhotos(herFiles as Record<string, string>),
+      Him: toPhotos(himFiles as Record<string, string>),
       Chaos: toPhotos(chaosFiles as Record<string, string>),
       Random: toPhotos(randomFiles as Record<string, string>),
-      Main: toPhotos(himFiles as Record<string, string>),
     } as Record<GroupKey, Photo[]>;
   }, []);
 
