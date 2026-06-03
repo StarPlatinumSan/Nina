@@ -4,6 +4,7 @@ import { motion, useAnimation, type Variants } from "framer-motion";
 
 import MusicWidget from "./components/MusicWidget";
 import PhotoCarousel from "./components/PhotoCarousel";
+import QuebecMap from "./components/QuebecMap";
 import GalleryPage from "./pages/GalleryPage";
 import { MusicPlayerProvider } from "./player/MusicPlayerContext";
 import { useMusicPlayer } from "./player/MusicPlayerContext";
@@ -588,6 +589,10 @@ function App() {
 											</Link>
 										</motion.div>
 									</div>
+								</motion.section>
+
+								<motion.section className="section" variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+									<QuebecMap />
 								</motion.section>
 
 								<motion.section className="section" id="poems" variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>

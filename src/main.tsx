@@ -1,12 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import "leaflet/dist/leaflet.css";
 import "./style.scss";
 import "./edit.scss";
 import "./components/PhotoCarousel.scss";
 import "./components/MusicWidget.scss";
 import "./components/SongSidebar.scss";
 import "./components/FloatingCats.scss";
+import "./components/QuebecMap.scss";
 import "./pages/GalleryPage.scss";
 
 import App from "./App.tsx";
