@@ -154,7 +154,7 @@ type QuebecMapProps = {
 	locations?: QuebecLocation[];
 };
 
-export default function QuebecMap({ title = "Poussin au Canada", subtitle = "", locations = defaultQuebecLocations }: QuebecMapProps) {
+export default function QuebecMap({ title = "Poussin au Canada", subtitle = "Les lieux de visite pour le Canada!!", locations = defaultQuebecLocations }: QuebecMapProps) {
 	return (
 		<section className="quebecMap">
 			<div className="quebecMap__header">
@@ -165,7 +165,7 @@ export default function QuebecMap({ title = "Poussin au Canada", subtitle = "", 
 
 				<div className="quebecMap__legend">
 					<span className="quebecMap__legendDot" />
-					<span>Clique sur un pin pour ouvrir sa fiche.</span>
+					<span>Clique sur un pin pour ouvrir la fiche détaillée.</span>
 				</div>
 			</div>
 
