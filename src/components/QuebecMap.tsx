@@ -154,11 +154,7 @@ type QuebecMapProps = {
 	locations?: QuebecLocation[];
 };
 
-export default function QuebecMap({
-	title = "Poussin au Canada",
-	subtitle = "Ajoute tes lieux au Québec et affiche-les comme des repères propres et romantiques.",
-	locations = defaultQuebecLocations,
-}: QuebecMapProps) {
+export default function QuebecMap({ title = "Poussin au Canada", subtitle = "", locations = defaultQuebecLocations }: QuebecMapProps) {
 	return (
 		<section className="quebecMap">
 			<div className="quebecMap__header">
@@ -169,17 +165,14 @@ export default function QuebecMap({
 
 				<div className="quebecMap__legend">
 					<span className="quebecMap__legendDot" />
-					<span>Clique sur un pin pour ouvrir une fiche plus propre.</span>
+					<span>Clique sur un pin pour ouvrir sa fiche.</span>
 				</div>
 			</div>
 
 			<div className="quebecMap__mapWrap">
 				<MapContainer center={MONTREAL_CENTER} zoom={10} scrollWheelZoom={false} className="quebecMap__map" zoomControl={false}>
 					<ZoomControl position="topright" />
-					<TileLayer
-						attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-					/>
+					<TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
 					{locations.map((location) => (
 						<Marker key={location.id} position={location.position} icon={pinkPin}>
